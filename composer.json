@@ -1,6 +1,6 @@
 {
     "name": "doomy/extended-nette-form",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "autoload": {
       "classmap": ["src/"]
     },
@@ -9,7 +9,7 @@
         "nette/application": "^2.4",
 		"doomy/repository": "1.2.4",
         "nette/forms": "^2.4",
-        "nette/utils": "^3.0",
+        "nette/utils": "^2.4",
         "nette/component-model": "*"
     },
 	"minimum-stability": "stable"
