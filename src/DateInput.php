@@ -20,7 +20,7 @@ class DateInput extends BaseControl
     }
 
     public function setValue($value) {
-        if ($value instanceof \DateTime)
+        if ($value instanceof \DateTime || $value instanceof \DateTimeImmutable)
             $this->date = $value;
         else $this->date = \DateTime::createFromFormat("d.m.Y", $value);
     }
