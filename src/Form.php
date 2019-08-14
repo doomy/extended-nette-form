@@ -20,6 +20,7 @@ class Form extends UIForm
 
     public function addDate($name, $label = null)
     {
+        if (!$label) $label = DbHelper::normalizeNameFromDB($name);
         return $this[$name] = new DateInput($label);
     }
 
