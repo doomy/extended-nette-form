@@ -4,6 +4,10 @@ namespace Doomy\ExtendedNetteForm;
 
 use Doomy\Repository\Helper\DbHelper;
 use Nette\Application\UI\Form as UIForm;
+use Nette\Forms\Controls\Checkbox;
+use Nette\Forms\Controls\SelectBox;
+use Nette\Forms\Controls\SubmitButton;
+use Nette\Forms\Controls\TextInput;
 
 class Form extends UIForm
 {
@@ -19,7 +23,7 @@ class Form extends UIForm
         return $this[$name] = new DateInput($label);
     }
 
-    public function addText($name, $label = null, $cols = NULL, $maxLength = NULL)
+    public function addText($name, $label = null, $cols = NULL, $maxLength = NULL): TextInput
     {
         if (!$label) $label = DbHelper::normalizeNameFromDB($name);
         $text = parent::addText($name, $label, $cols, $maxLength);
@@ -27,7 +31,7 @@ class Form extends UIForm
         return $text;
     }
 
-    public function addEmail($name, $label = null, $cols = NULL, $maxLength = NULL)
+    public function addEmail($name, $label = null, $cols = NULL, $maxLength = NULL): TextInput
     {
         if (!$label) $label = DbHelper::normalizeNameFromDB($name);
         $email = parent::addText($name, $label, $cols, $maxLength);
@@ -35,21 +39,21 @@ class Form extends UIForm
         return $email;
     }
 
-    public function addSelect($name, $label = NULL, array $items = NULL, $size = NULL)
+    public function addSelect($name, $label = NULL, array $items = NULL, $size = NULL): SelectBox
     {
         $select = parent::addSelect($name, $label, $items, $size);
         $select->setAttribute('class', 'form-control');
         return $select;
     }
 
-    public function addSubmit($name, $caption = NULL)
+    public function addSubmit($name, $caption = NULL): SubmitButton
     {
         $submit = parent::addSubmit($name, $caption);
         $submit->setAttribute("class", "btn btn-primary");
         return $submit;
     }
 
-    public function addCheckbox($name, $caption = NULL)
+    public function addCheckbox($name, $caption = NULL): Checkbox
     {
         $checkbox = parent::addCheckbox($name, $caption);
         $checkbox->setAttribute("class", "form-check");
