@@ -68,6 +68,14 @@ class Form extends UIForm
         return $link;
     }
 
+    public function addInteger($name, $label = null, $cols = NULL, $maxLength = NULL): TextInput
+    {
+        if (!$label) $label = DbHelper::normalizeNameFromDB($name);
+        $integer = parent::addInteger($name, $label, $cols, $maxLength);
+        $integer->setAttribute('class', 'form-control');
+        return $integer;
+    }
+
     public function setBSrenderer()
     {
         $renderer = $this->getRenderer();
