@@ -29,16 +29,16 @@ class DateInput extends BaseControl
         return $this->date;
     }
 
-    public function loadHttpData()
+    public function loadHttpData(): void
     {
         $dateStr = $this->getHttpData(NetteForm::DATA_LINE);
         $dateStr .= " 0:00:00"; // we're only working with dates here
         $this->date =  \DateTime::createFromFormat("d.m.Y H:i:s", $dateStr);
     }
 
-    public function isFilled()
+    public function isFilled(): bool
     {
-        return true;
+        return TRUE;
     }
 
     public function setMinDate($minDate) {
