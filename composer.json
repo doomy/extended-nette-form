@@ -1,13 +1,13 @@
 {
     "name": "doomy/extended-nette-form",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "autoload": {
       "classmap": ["src/"]
     },
     "require": {
 		"php": ">= 7.1",
         "nette/application": "^3.0",
-		"doomy/repository": "^3.0",
+		"doomy/repository": "*",
         "nette/forms": "^3.0",
         "nette/utils": "^3.0",
         "nette/component-model": "*"
