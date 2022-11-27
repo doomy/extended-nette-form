@@ -15,6 +15,7 @@ class DateInput extends BaseControl
 
     public function __construct($caption)
     {
+        die("test");
         parent::__construct($caption);
         $this->setRequired(false);
     }
@@ -22,6 +23,9 @@ class DateInput extends BaseControl
     public function setValue($value) {
         if ($value instanceof \DateTime || $value instanceof \DateTimeImmutable)
             $this->date = $value;
+        elseif ($value === NULL) {
+            $this->date = false;
+        }
         else $this->date = \DateTime::createFromFormat("d.m.Y", $value);
     }
 
