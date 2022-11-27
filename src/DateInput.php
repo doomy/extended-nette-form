@@ -15,7 +15,6 @@ class DateInput extends BaseControl
 
     public function __construct($caption)
     {
-        die("test");
         parent::__construct($caption);
         $this->setRequired(false);
     }
