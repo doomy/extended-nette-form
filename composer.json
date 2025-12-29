@@ -8,7 +8,7 @@
         "nette/application": "^3.0",
 		"doomy/repository": "*",
         "nette/forms": "^3.0",
-        "nette/utils": "^3.0",
+        "nette/utils": "^3.0|^4.0",
         "nette/component-model": "*"
     },
 	"minimum-stability": "stable"
