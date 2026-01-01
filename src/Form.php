@@ -12,13 +12,13 @@ use Nette\Forms\Controls\TextInput;
 class Form extends UIForm
 {
 
-    public function __construct(Nette\ComponentModel\IContainer $parent = null, $name = null)
+    public function __construct(?\Nette\ComponentModel\IContainer $parent = null, $name = null)
     {
         parent::__construct($parent, $name);
         $this->setBSrenderer();
     }
 
-    public function addDate($name, $label = null)
+    public function addDate($name, $label = null): \Nette\Forms\Controls\DateTimeControl
     {
         if (!isset($label)) $label = DbHelper::normalizeNameFromDB($name);
         return $this[$name] = new DateInput($label);
@@ -40,7 +40,7 @@ class Form extends UIForm
         return $email;
     }
 
-    public function addSelect($name, $label = NULL, array $items = NULL, $size = NULL): SelectBox
+    public function addSelect($name, $label = NULL, ?array $items = NULL, $size = NULL): SelectBox
     {
         $select = parent::addSelect($name, $label, $items, $size);
         $select->setAttribute('class', 'form-control');
