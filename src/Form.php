@@ -18,12 +18,6 @@ class Form extends UIForm
         $this->setBSrenderer();
     }
 
-    public function addDate($name, $label = null): \Nette\Forms\Controls\DateTimeControl
-    {
-        if (!isset($label)) $label = DbHelper::normalizeNameFromDB($name);
-        return $this[$name] = new DateInput($label);
-    }
-
     public function addText($name, $label = null, $cols = NULL, $maxLength = NULL): TextInput
     {
         if (!isset($label)) $label = DbHelper::normalizeNameFromDB($name);
